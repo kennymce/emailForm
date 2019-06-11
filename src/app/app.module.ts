@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { EmailComponent } from './email/email.component';
 import { EburyAttachmentListComponent } from './ebury-attachment-list/ebury-attachment-list.component';
-import { InsertionPointDirective } from './insertion-point.directive';
 import {FormsModule} from '@angular/forms';
 import { EburyAttachmentListConfComponent } from './ebury-attachment-list-conf/ebury-attachment-list-conf.component';
 
@@ -13,7 +12,6 @@ import { EburyAttachmentListConfComponent } from './ebury-attachment-list-conf/e
     AppComponent,
     EmailComponent,
     EburyAttachmentListComponent,
-    InsertionPointDirective,
     EburyAttachmentListConfComponent,
   ],
   imports: [
