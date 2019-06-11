@@ -1,0 +1,8 @@
+<div class="attachmentImagesContainer " *ngFor="let image of attachedImages" id="multipleContainer">
+  <div class="singleAttachmentContainer" id="{{image.id}}">
+    <div class="originalImage">
+      <img class="img-rounded attachmentImage" alt="attachment" [src]="image.image" height="50" width="50"
+           *ngIf="image">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="attachmentImagesContainer " *ngFor="let image of attachedImages" id="multipleContainer">
+  <div class="singleAttachmentContainer" id="{{image.id}}">
+    <div class="originalImage">
+      <img class="img-rounded attachmentImage" alt="attachment" [src]="image.image" height="50" width="50"
+           *ngIf="image">
+    </div>
+    <div class="overlay" (click)="removeImage(image.id)">
+      <img class="binImage" src="../../assets/bin4.gif"/>
+    </div>
+  </div>
+</div>
+

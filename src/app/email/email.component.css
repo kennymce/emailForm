@@ -1,0 +1,119 @@
+div.emailForm {
+  vertical-align: top;
+  margin-top: 15%;
+  left: 25%;
+  font-size: 11px;
+}
+.cardHeader {
+  background-color: #0c4357;
+}
+.card {
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.eb-input-normal {
+  font-size: 11px;
+  width: 121%;
+}
+.eb-input-textarea {
+  font-size: 11px;
+  resize: none;
+  text-indent: -5px;
+}
+div.emailButtons {
+  border-width: 1px;
+  border-color: black;
+}
+.attach {
+  opacity: 0.7;
+  display: block;
+  float: left;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid #95979a;
+  background: url("../../assets/crop_clip123456.gif") no-repeat right 3px bottom 3px;
+  filter: alpha(opacity=50);
+}
+.attach:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.send {
+  padding: 5px 18px 6px 16px;
+  font-size: 13px;
+  display: block;
+  float: right;
+  background-color: #21bfee;
+  border-radius: 50px;
+  color: white;
+  border: none;
+  outline: none;
+}
+.send:disabled {
+  padding: 5px 18px 6px 16px;
+  font-size: 13px;
+  background-color: #e0e0e0;
+  color: #95979a;
+  border: none;
+}
+.hidden {
+  visibility: hidden;
+}
+.attachmentText {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.confirmationCardBody {
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 50px 70px 10px 40px;
+}
+.confirmationCardMessage {
+  padding-top: 10px;
+  padding-bottom: 25px;
+  white-space: pre-wrap;
+}
+.confirmationCardSubject {
+  font-weight: bolder;
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+.confirmationCardGraphic {
+  height: 85px;
+  width: 99px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+hr {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #dedede;
+}
+.confirmationCardEmailSent {
+  text-align: center;
+  font-size: 21px;
+}
+.confirmationCardEmail {
+  font-weight: bold;
+  color: #49cef2;
+  padding-bottom: 5px;
+}
+.confirmationEmailLabel {
+  font-weight: normal;
+  color: black;
+}
+.emailEntryForm {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.confirmationCard {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/*# sourceMappingURL=email.component.css.map */

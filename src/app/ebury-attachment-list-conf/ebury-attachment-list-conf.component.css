@@ -1,0 +1,14 @@
+.attachmentImagesContainer {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.singleAttachmentContainer {
+  position: relative;
+}
+.attachmentImage {
+  border-radius: 7px;
+  height: 85px;
+  width: 85px;
+  margin-right: 8px;
+}
+/*# sourceMappingURL=ebury-attachment-list-conf.component.css.map */

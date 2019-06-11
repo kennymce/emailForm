@@ -1,0 +1,52 @@
+@attachmentImageHeight:85px;
+@attachmentImageWidth: 85px;
+
+.attachmentImagesContainer {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .3s ease;
+}
+
+.singleAttachmentContainer {
+  position: relative;
+}
+
+.singleAttachmentContainer:hover .overlay {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.attachmentImage {
+  border-radius: 7px;
+  height: @attachmentImageHeight;
+  width: @attachmentImageWidth;
+  margin-right: 8px;
+}
+
+.attachmentImage:hover {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  transition: .5s ease;
+}
+
+.binImage {
+  border-radius: 7px;
+  position: absolute;
+  margin-top: 8px;
+  margin-left: 8px;
+  text-align: center;
+  opacity: 0.9;
+}

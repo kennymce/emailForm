@@ -1,0 +1,73 @@
+<div class="container bgDiv">
+  <div class="card emailForm w-50 shadow-p mb-5 rounded">
+    <div class="emailEntryForm" [ngClass]="{'hidden emailEntryForm': !this.editMode}">
+      <div class="card-header cardHeader text-light"><span>Send E-mail</span></div>
+      <div class="card-body cardBody">
+        <form #emailForm="ngForm" (ngSubmit)="sendEmail(emailForm)">
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <input type="email" id="to" name="to" [(ngModel)]="formFields.to"
+                     class="form-control form-control-sm eb-input-normal" placeholder="To" required="true"
+                     [ngClass]="{'is-invalid':  validateTo()}">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <input type="email" id="cc" name="cc" [(ngModel)]="formFields.cc"
+                     class="form-control form-control-sm eb-input-normal" placeholder="CC"
+                     [ngClass]="{'is-invalid':  validateCc()}">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <input type="email" id="bcc" name="bcc" [(ngModel)]="formFields.bcc"
+                     class="form-control form-control-sm eb-input-normal" placeholder="BCC"
+                     [ngClass]="{'is-invalid':  validateBcc()}">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <input type="text" id="subject" name="subject" [(ngModel)]="formFields.subject"
+                     class="form-control form-control-sm eb-input-normal" placeholder="Subject" required="true">
+            </div>
+          </div>
+          <div class="form-group">
+          <textarea id="message" name="message" [(ngModel)]="formFields.message" class="form-control eb-input-textarea"
+                    id="exampleFormControlTextarea1" rows="5" placeholder="Message" required="true"></textarea>
+          </div>
+          <div class="attachmentText" *ngIf="(this.attachmentCount > 0)">Attached files:{{this.attachmentCount}}</div>
+          <div class="attachments">
+            <app-ebury-attachment-list (binClick)="handleBinClicked()"></app-ebury-attachment-list>
+          </div>
+          <div class="emailButtons">
+            <span><label class="attach"><input #file type="file" class="hidden"
+                                               (change)="sendImagesToChild(file.files)"></label></span>
+            <span><button class="send" [disabled]="emailForm.invalid"><i
+              class="fas fa-arrow-right"></i> Send</button></span>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="confirmationCard" [ngClass]="{'hidden confirmationCard': this.editMode}">
+      <div class="card-body confirmationCardBody">
+        <div class="confirmationCardGraphicDiv">
+          <img class="confirmationCardGraphic" src="../../assets/tick.gif"/>
+        </div>
+        <div class="confirmationCardEmailSent">
+          Your email has been sent
+        </div>
+        <hr>
+        <div class="confirmationCardSubject">{{formFields.subject}}</div>
+        <div class="confirmationCardEmail"><span class="confirmationEmailLabel">to</span> {{formFields.to}}</div>
+        <div class="confirmationCardEmail" [ngClass]="{'hidden': !formFields.cc}"><span class="confirmationEmailLabel">cc</span> {{formFields.cc}}
+        </div>
+        <div class="confirmationCardEmail" [ngClass]="{'hidden': !formFields.bcc}"><span class="confirmationEmailLabel">bcc</span> {{formFields.bcc}}
+        </div>
+        <div class="confirmationCardMessage">{{formFields.message}}</div>
+        <div class="confirmationCardAttachments">
+          <app-ebury-attachment-list-conf></app-ebury-attachment-list-conf>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

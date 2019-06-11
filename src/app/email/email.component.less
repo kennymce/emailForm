@@ -1,0 +1,161 @@
+@emailFormMarginTop: 15%;
+@regularFontSize: 11px;
+@cardHeaderBackgroundColor: #0c4357;
+@attachmentBorder: 1px solid #95979a;
+@buttonFontSize: 13px;
+@sendButtonBackgroundColor: #21bfee;
+@sendButtonForegroundColor: white;
+@attachButtonWidth: 30px;
+@attachButtonHeight: 30px;
+@attachButtonBackgroundImage: url("../../assets/crop_clip123456.gif") no-repeat right 3px bottom 3px;
+@disabledButtonBackgroundColor: #e0e0e0;
+@sendDisabledForegroundColor: #95979a;
+@attachmentTextSize: 12px;
+@confirmationCardSubjectFontSize: 14px;
+@horizontalRuleColor: #dedede;
+@confirmationCardEmailSentFontSize: 21px;
+@confirmationCardEmailTextColor: #49cef2;
+@confirmationEmailLabelColor: black;
+
+div.emailForm {
+  vertical-align: top;
+  margin-top: @emailFormMarginTop;
+  left:25%;
+  font-size: @regularFontSize;
+}
+
+.cardHeader {
+  background-color: @cardHeaderBackgroundColor;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.eb-input-normal {
+  font-size: @regularFontSize;
+  width: 121%;
+}
+
+.eb-input-textarea {
+  font-size: @regularFontSize;
+  resize: none;
+  text-indent: -5px;
+}
+
+div.emailButtons {
+  border-width: 1px;
+  border-color: black;
+}
+
+.attach {
+  opacity: 0.7;
+  display:block;
+  float: left;
+  height: @attachButtonHeight;
+  width: @attachButtonWidth;
+  border-radius: 50%;
+  border: @attachmentBorder;
+  background: @attachButtonBackgroundImage;
+  filter: alpha(opacity=50);
+}
+
+.attach:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.send {
+  padding: 5px 18px 6px 16px;
+  font-size: @buttonFontSize;
+  display: block;
+  float: right;
+  background-color: @sendButtonBackgroundColor;
+  border-radius: 50px;
+  color: @sendButtonForegroundColor;
+  border: none;
+  outline:none;
+}
+
+.send:disabled {
+  padding: 5px 18px 6px 16px;
+  font-size: @buttonFontSize;
+  background-color: @disabledButtonBackgroundColor;
+  color: @sendDisabledForegroundColor;
+  border: none;
+}
+
+.hidden {
+  visibility:hidden;
+}
+
+.attachmentText {
+  font-size: @attachmentTextSize;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.confirmationCardBody {
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 50px 70px 10px 40px;
+}
+
+.confirmationCardMessage {
+  padding-top: 10px;
+  padding-bottom: 25px;
+  white-space: pre-wrap;
+}
+
+.confirmationCardSubject {
+  font-weight: bolder;
+  font-size: @confirmationCardSubjectFontSize;
+  padding-bottom: 5px;
+}
+
+.confirmationCardGraphicDiv {
+}
+
+.confirmationCardGraphic {
+  height: 85px;
+  width: 99px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+hr {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: @horizontalRuleColor;
+}
+
+.confirmationCardEmailSent {
+  text-align: center;
+  font-size: @confirmationCardEmailSentFontSize;
+}
+
+.confirmationCardEmail {
+  font-weight: bold;
+  color: @confirmationCardEmailTextColor;
+  padding-bottom: 5px;
+}
+
+.confirmationEmailLabel {
+  font-weight: normal;
+  color: @confirmationEmailLabelColor;
+}
+
+.emailEntryForm {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.confirmationCard {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
