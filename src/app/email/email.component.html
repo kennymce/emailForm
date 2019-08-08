@@ -8,7 +8,7 @@
             <div class="col-sm-10">
               <input type="email" id="to" name="to" [(ngModel)]="formFields.to"
                      class="form-control form-control-sm eb-input-normal" placeholder="To" required="true"
-                     [ngClass]="{'is-invalid':  validateTo()}">
+                     [ngClass]="{'is-invalid':  formFields.to && !validateTo()}">
             </div>
           </div>
           <div class="form-group row">
@@ -33,16 +33,16 @@
           </div>
           <div class="form-group">
           <textarea id="message" name="message" [(ngModel)]="formFields.message" class="form-control eb-input-textarea"
-                    id="exampleFormControlTextarea1" rows="5" placeholder="Message" required="true"></textarea>
+                    rows="5" placeholder="Message" required="true"></textarea>
           </div>
           <div class="attachmentText" *ngIf="(this.attachmentCount > 0)">Attached files:{{this.attachmentCount}}</div>
           <div class="attachments">
             <app-ebury-attachment-list (binClick)="handleBinClicked()"></app-ebury-attachment-list>
           </div>
           <div class="emailButtons">
-            <span><label class="attach"><input #file type="file" class="hidden"
+            <span><label class="attach"><input #file type="file" class="hidden" id="file"
                                                (change)="sendImagesToChild(file.files)"></label></span>
-            <span><button class="send" [disabled]="emailForm.invalid"><i
+            <span><button class="send" id="send" [disabled]="emailForm.invalid || !validateTo()"><i
               class="fas fa-arrow-right"></i> Send</button></span>
           </div>
         </form>

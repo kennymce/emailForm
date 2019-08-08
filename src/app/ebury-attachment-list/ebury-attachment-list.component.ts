@@ -1,20 +1,16 @@
 import {Component, ElementRef, EventEmitter, OnInit, Output} from '@angular/core';
-import {nativeParentNode} from '@angular/core/src/render3/node_manipulation';
 
 @Component({
   selector: 'app-ebury-attachment-list',
   templateUrl: './ebury-attachment-list.component.html',
   styleUrls: ['./ebury-attachment-list.component.less']
 })
-export class EburyAttachmentListComponent implements OnInit {
+export class EburyAttachmentListComponent  {
   @Output() binClick = new EventEmitter();
   public attachmentFile: any;
   public attachedImages: any;
 
   constructor(private elem: ElementRef) {
-  }
-
-  ngOnInit() {
   }
 
   removeImage(imageId) {

@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
+import { EmailComponent} from '../email/email.component';
 import { EburyAttachmentListComponent } from './ebury-attachment-list.component';
 
 describe('EburyAttachmentListComponent', () => {

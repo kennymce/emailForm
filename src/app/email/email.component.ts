@@ -10,10 +10,10 @@ import {EburyAttachmentListConfComponent} from '../ebury-attachment-list-conf/eb
 })
 
 export class EmailComponent implements OnInit {
-  @ViewChild(EburyAttachmentListComponent) eburyAttachmentListComponent;
-  @ViewChild(EburyAttachmentListConfComponent) eburyAttachmentListConfComponent;
+  @ViewChild(EburyAttachmentListComponent, { static: true }) eburyAttachmentListComponent;
+  @ViewChild(EburyAttachmentListConfComponent, { static: true }) eburyAttachmentListConfComponent;
   // tslint:disable-next-line:max-line-length
-  regexp = new RegExp('^(([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)(\\s*,\\s*|\\s*$))*$');
+  regexp = new RegExp('^(([a-zA-Z0-9_\\-.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)(\\s*,\\s*|\\s*$))*$');
   attachmentList: any[];
   attachmentCount: number;
   formFields: FormFields;
@@ -27,7 +27,7 @@ export class EmailComponent implements OnInit {
 
   validateTo() {
     if (this.formFields.to) {
-      return (!this.regexp.test(this.formFields.to));
+      return (this.regexp.test(this.formFields.to));
     }
   }
 
@@ -50,17 +50,19 @@ export class EmailComponent implements OnInit {
     this.eburyAttachmentListComponent.attachmentFile = file;
     reader.readAsDataURL(file[0]);
     try {
-      reader.onload = () => {
-        const attachmentThingy: AttachmentThingy = new AttachmentThingy(file[0].name, reader.result);
-        this.attachmentList.push(attachmentThingy);
-        this.eburyAttachmentListComponent.attachedImages = this.attachmentList;
-        this.attachmentCount += 1;
-      };
+      reader.onload = () => this.attachFile(file[0].name, reader.result);
     } catch (error) {
       console.log('File not uploaded');
     }
 
   }
+
+  attachFile(filename: string, result: any) {
+      const attachmentThing: AttachmentThing = new AttachmentThing(filename, result);
+      this.attachmentList.push(attachmentThing);
+      this.eburyAttachmentListComponent.attachedImages = this.attachmentList;
+      this.attachmentCount += 1;
+    }
 
   handleBinClicked() {
     this.attachmentCount -= 1;
@@ -72,7 +74,7 @@ export class EmailComponent implements OnInit {
   }
 }
 
-export class AttachmentThingy {
+export class AttachmentThing {
   id: any;
   image: any;
   constructor(id: any, image: any) {
